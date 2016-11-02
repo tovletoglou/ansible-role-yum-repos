@@ -1,0 +1,27 @@
+---
+
+- name: Configure additional repos in /etc/yum.repos.d/
+  yum_repository:
+    name: "{{ item.key }}"
+    file: "{{ item.value.file }}"
+    description: "{{ item.value.description }}"
+    #baseurl: "{{ item.value.baseurl }}"
+    mirrorlist: "{{ item.value.mirrorlist }}"
+    gpgkey: "{{ item.value.gpgkey }}"
+    enabled: "{{ item.value.enabled }}"
+    gpgcheck: "{{ item.value.gpgcheck }}"
+  with_dict: "{{ yum_repos_list }}"
+  when: yum_repos_list.keys() | length > 0
+
+- name: Configure additional repos in /etc/yum.repos.d/
+  yum_repository:
+    name: "{{ item.key }}"
+    file: "{{ item.value.file }}"
+    description: "{{ item.value.description }}"
+    #baseurl: "{{ item.value.baseurl }}"
+    mirrorlist: "{{ item.value.mirrorlist }}"
+    gpgkey: "{{ item.value.gpgkey }}"
+    enabled: "{{ item.value.enabled }}"
+    gpgcheck: "{{ item.value.gpgcheck }}"
+  with_dict: "{{ yum_repos_list_custom }}"
+  when: yum_repos_list_custom.keys() | length > 0

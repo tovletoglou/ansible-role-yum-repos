@@ -1,0 +1,203 @@
+---
+
+# Define your custom repositories.
+#
+# Example:
+#
+# yum_repos_list_custom:
+#   UNIQUE_REPOSITORY_ID:
+#     file: FILE_TO_USE_TO_SAVE_THE_REPO_IN
+#     description: A_HUMAN_READABLE_STRING_DESCRIBING_THE_REPOSITORY
+#     baseurl: URL_TO_THE_DIRECTORY_WHERE_THE_YUM_REPOSITORYS_REPODATA_DIRECTORY_LIVES # not necessary
+#     mirrorlist: SPECIFIES_A_URL_TO_A_FILE_CONTAINING_A_LIST_OF_BASEURLS
+#     gpgkey: A_URL_POINTING_TO_THE_ASCII_ARMORED_GPG_KEY_FILE_FOR_THE_REPOSITORY
+#     enabled: yes
+#     gpgcheck: yes
+#     failovermethod: priority
+#
+# Example 2:
+#
+# yum_repos_list_custom:
+#   epel:
+#     file: epel
+#     description: Extra Packages for Enterprise Linux 7 - $basearch
+#     baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
+#     mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
+#     gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+#     enabled: yes
+#     gpgcheck: yes
+#     failovermethod: priority
+yum_repos_list_custom: {}
+
+# List of well know Centos 7 repositories.
+# Do not edit. If you want to create your repository list use the
+# variable `{{ yum_repos_list_custom }}`
+yum_repos_list:
+  # epel.repo
+  epel:
+    file: epel
+    description: Extra Packages for Enterprise Linux 7 - $basearch
+    baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
+    mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    enabled: yes
+    gpgcheck: yes
+    failovermethod: priority
+  epel-debuginfo:
+    file: epel
+    description: Extra Packages for Enterprise Linux 7 - $basearch - Debug
+    baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch/debug
+    mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=epel-debug-7&arch=$basearch
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  epel-source:
+    file: epel
+    description: Extra Packages for Enterprise Linux 7 - $basearch - Source
+    baseurl: http://download.fedoraproject.org/pub/epel/7/SRPMS
+    mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=epel-source-7&arch=$basearch
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  # epel-testing.repo
+  epel-testing:
+    file: epel-testing
+    description: Extra Packages for Enterprise Linux 7 - Testing - $basearch
+    baseurl: http://download.fedoraproject.org/pub/epel/testing/7/$basearch
+    mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=testing-epel7&arch=$basearch
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  epel-testing-debuginfo:
+    file: epel-testing
+    description: Extra Packages for Enterprise Linux 7 - Testing - $basearch - Debug
+    baseurl: http://download.fedoraproject.org/pub/epel/testing/7/$basearch/debug
+    mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel7&arch=$basearch
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  epel-testing-source:
+    file: epel-testing
+    description: Extra Packages for Enterprise Linux 7 - Testing - $basearch - Source
+    baseurl: http://download.fedoraproject.org/pub/epel/testing/7/SRPMS
+    mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=testing-source-epel7&arch=$basearch
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  # ius.repo
+  ius:
+    file: ius
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch
+    baseurl: https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/$basearch
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7&arch=$basearch&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: yes
+    gpgcheck: yes
+    failovermethod: priority
+  ius-debuginfo:
+    file: ius
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Debug
+    baseurl: https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/$basearch/debuginfo
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-debuginfo&arch=$basearch&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  ius-source:
+    file: ius
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Source
+    baseurl: https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/SRPMS
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-source&arch=source&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  # ius-archive.repo
+  ius-archive:
+    file: ius-archive
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Archive
+    baseurl: https://dl.iuscommunity.org/pub/ius/archive/CentOS/7/$basearch
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-archive&arch=$basearch&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  ius-archive-debuginfo:
+    file: ius-archive
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Archive Debug
+    baseurl: https://dl.iuscommunity.org/pub/ius/archive/CentOS/7/$basearch/debuginfo
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-archive-debuginfo&arch=$basearch&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  ius-archive-source:
+    file: ius-archive
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Archive Source
+    baseurl: https://dl.iuscommunity.org/pub/ius/archive/CentOS/7/SRPMS
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-archive-source&arch=source&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  # ius-dev.repo
+  ius-dev:
+    file: ius-dev
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Dev
+    baseurl: https://dl.iuscommunity.org/pub/ius/development/CentOS/7/$basearch
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-dev&arch=$basearch&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  ius-dev-debuginfo:
+    file: ius-dev
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Dev Debug Info
+    baseurl: https://dl.iuscommunity.org/pub/ius/development/CentOS/7/$basearch/debuginfo
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-dev-debuginfo&arch=$basearch&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  ius-dev-source:
+    file: ius-dev
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Dev Source
+    baseurl: https://dl.iuscommunity.org/pub/ius/development/CentOS/7/SRPMS
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-dev-source&arch=source&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  # ius-testing.repo
+  ius-testing:
+    file: ius-testing
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Testing
+    baseurl: https://dl.iuscommunity.org/pub/ius/testing/CentOS/7/$basearch
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-testing&arch=$basearch&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  ius-testing-debuginfo:
+    file: ius-testing
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Testing Debug
+    baseurl: https://dl.iuscommunity.org/pub/ius/testing/CentOS/7/$basearch/debuginfo
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-testing-debuginfo&arch=$basearch&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
+  ius-testing-source:
+    file: ius-testing
+    description: IUS Community Packages for Enterprise Linux 7 - $basearch - Testing Source
+    baseurl: https://dl.iuscommunity.org/pub/ius/testing/CentOS/7/SRPMS
+    mirrorlist: https://mirrors.iuscommunity.org/mirrorlist?repo=ius-centos7-testing-source&arch=source&protocol=http
+    gpgkey: http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY
+    enabled: no
+    gpgcheck: yes
+    failovermethod: priority
