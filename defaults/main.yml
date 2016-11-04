@@ -23,7 +23,7 @@
 #     description: Extra Packages for Enterprise Linux 7 - $basearch
 #     baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
 #     mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
-#     gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+#     gpgkey: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
 #     enabled: yes
 #     gpgcheck: yes
 #     failovermethod: priority
@@ -39,7 +39,7 @@ yum_repos_list:
     description: Extra Packages for Enterprise Linux 7 - $basearch
     baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
     mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
-    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    gpgkey: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
     enabled: yes
     gpgcheck: yes
     failovermethod: priority
@@ -48,7 +48,7 @@ yum_repos_list:
     description: Extra Packages for Enterprise Linux 7 - $basearch - Debug
     baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch/debug
     mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=epel-debug-7&arch=$basearch
-    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    gpgkey: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
     enabled: no
     gpgcheck: yes
     failovermethod: priority
@@ -57,7 +57,7 @@ yum_repos_list:
     description: Extra Packages for Enterprise Linux 7 - $basearch - Source
     baseurl: http://download.fedoraproject.org/pub/epel/7/SRPMS
     mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=epel-source-7&arch=$basearch
-    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    gpgkey: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
     enabled: no
     gpgcheck: yes
     failovermethod: priority
@@ -67,7 +67,7 @@ yum_repos_list:
     description: Extra Packages for Enterprise Linux 7 - Testing - $basearch
     baseurl: http://download.fedoraproject.org/pub/epel/testing/7/$basearch
     mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=testing-epel7&arch=$basearch
-    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    gpgkey: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
     enabled: no
     gpgcheck: yes
     failovermethod: priority
@@ -76,7 +76,7 @@ yum_repos_list:
     description: Extra Packages for Enterprise Linux 7 - Testing - $basearch - Debug
     baseurl: http://download.fedoraproject.org/pub/epel/testing/7/$basearch/debug
     mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel7&arch=$basearch
-    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    gpgkey: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
     enabled: no
     gpgcheck: yes
     failovermethod: priority
@@ -85,7 +85,7 @@ yum_repos_list:
     description: Extra Packages for Enterprise Linux 7 - Testing - $basearch - Source
     baseurl: http://download.fedoraproject.org/pub/epel/testing/7/SRPMS
     mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=testing-source-epel7&arch=$basearch
-    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    gpgkey: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
     enabled: no
     gpgcheck: yes
     failovermethod: priority
