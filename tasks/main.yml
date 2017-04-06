@@ -1,6 +1,7 @@
 ---
 
 - name: Configure additional repos in /etc/yum.repos.d/
+  become: yes
   yum_repository:
     name: "{{ item.key }}"
     file: "{{ item.value.file }}"
@@ -14,6 +15,7 @@
   when: yum_repos_list.keys() | length > 0
 
 - name: Configure additional repos in /etc/yum.repos.d/
+  become: yes
   yum_repository:
     name: "{{ item.key }}"
     file: "{{ item.value.file }}"
